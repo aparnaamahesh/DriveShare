@@ -9,13 +9,19 @@ body {
   color: #222;
 }
 
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
 nav {
   height: 70px;
   padding: 0 8%;
   background: white;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   box-shadow: 0 2px 8px #ddd;
 }
 
@@ -23,6 +29,7 @@ nav {
   font-size: 24px;
   font-weight: bold;
   color: #222;
+  text-decoration: none;
 }
 
 nav div {
@@ -36,33 +43,79 @@ nav a {
   color: #333;
 }
 
-button {
+nav a:hover {
+  color: #000;
+}
+
+.nav-button {
   padding: 10px 18px;
   border: none;
   border-radius: 7px;
   cursor: pointer;
+
   background: #222;
   color: white;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  background: #222;
+  color: white;
+
+  font-size: 14px;
+}
+
+button:hover {
+  opacity: 0.9;
 }
 
 .btn {
   display: inline-block;
+
   padding: 10px 18px;
+
   border-radius: 7px;
+
   background: #222;
   color: white;
+
   text-decoration: none;
+
   cursor: pointer;
 }
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
 
 main {
   width: 85%;
   max-width: 1000px;
+
   margin: 40px auto;
 }
 
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .hero {
   text-align: center;
+
   padding: 50px 20px;
 }
 
@@ -78,26 +131,63 @@ main {
 .hero input {
   width: 80%;
   max-width: 500px;
+
   margin-top: 25px;
 }
 
+.search-input {
+  padding: 12px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 7px;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   RIDES
+   ========================================================= */
+
 .rides {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
   gap: 20px;
 }
+
+/* =========================================================
+   CARDS
+   ========================================================= */
 
 .card,
 .details {
   background: white;
+
   padding: 25px;
+
   border-radius: 12px;
+
   box-shadow: 0 3px 12px #ddd;
+}
+
+.card h3 {
+  margin-top: 0;
 }
 
 .card button {
   margin-top: 10px;
 }
+
+.my-ride-card {
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   FORMS
+   ========================================================= */
 
 .form-page {
   display: flex;
@@ -106,27 +196,282 @@ main {
 
 form {
   width: 400px;
+
   background: white;
+
   padding: 30px;
+
   border-radius: 12px;
+
   box-shadow: 0 3px 12px #ddd;
+
   display: flex;
   flex-direction: column;
+
   gap: 15px;
+}
+
+form label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: -8px;
 }
 
 input {
   padding: 12px;
+
   border: 1px solid #ccc;
+
   border-radius: 7px;
+
+  font-size: 15px;
 }
+
+input:focus {
+  outline: none;
+  border-color: #777;
+}
+
+/* =========================================================
+   MY RIDES HEADER
+   ========================================================= */
+
+.ride-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 20px;
+}
+
+.ride-actions {
+  display: flex;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   EDIT / DELETE
+   ========================================================= */
+
+.edit-btn {
+  background: #444;
+}
+
+.delete-btn {
+  background: #b42318;
+}
+
+.delete-btn:hover {
+  background: #941b12;
+}
+
+/* =========================================================
+   REQUESTS
+   ========================================================= */
 
 .request {
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
+  gap: 15px;
+
   margin: 10px 0;
+
+  padding: 12px;
+
+  border: 1px solid #eee;
+
+  border-radius: 8px;
+
+  background: #fafafa;
 }
+
+.request-actions {
+  display: flex;
+
+  gap: 8px;
+}
+
+.accept-btn {
+  background: #222;
+}
+
+.reject-btn {
+  background: #b42318;
+}
+
+.reject-btn:hover {
+  background: #941b12;
+}
+
+/* =========================================================
+   REQUEST STATUS
+   ========================================================= */
+
+.status {
+  display: inline-block;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: bold;
+}
+
+.status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.accepted {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.status.rejected {
+  background: #f8d7da;
+  color: #842029;
+}
+
+.status-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 20px;
+
+  padding-top: 15px;
+
+  border-top: 1px solid #eee;
+
+  font-weight: bold;
+}
+
+/* =========================================================
+   MY REQUESTS
+   ========================================================= */
+
+.request-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.request-card {
+  width: 100%;
+}
+
+/* =========================================================
+   EDIT MODAL
+   ========================================================= */
+
+.modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 20px;
+
+  z-index: 1000;
+}
+
+.edit-modal {
+  width: 100%;
+
+  max-width: 450px;
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.edit-modal h2 {
+  margin-top: 0;
+}
+
+.edit-modal form {
+  width: 100%;
+
+  box-shadow: none;
+
+  padding: 0;
+}
+
+.modal-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 10px;
+}
+
+.cancel-btn {
+  background: #777;
+}
+
+.save-btn {
+  background: #222;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+  background: white;
+
+  padding: 35px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 3px 12px #ddd;
+
+  text-align: center;
+
+  margin-top: 20px;
+}
+
+.muted {
+  color: #777;
+}
+
+.no-seats {
+  color: #b42318;
+
+  font-weight: bold;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 700px) {
 
@@ -138,11 +483,68 @@ input {
     gap: 8px;
   }
 
+  nav a {
+    font-size: 13px;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
   .rides {
     grid-template-columns: 1fr;
   }
 
   .hero h1 {
     font-size: 32px;
+  }
+
+  main {
+    width: 92%;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .ride-header {
+    flex-direction: column;
+  }
+
+  .ride-actions {
+    width: 100%;
+  }
+
+  .ride-actions button {
+    flex: 1;
+  }
+
+  .request {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .request-actions {
+    width: 100%;
+  }
+
+  .request-actions button {
+    flex: 1;
+  }
+
+  .status-row {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+
+  .modal-overlay {
+    align-items: flex-start;
+
+    padding-top: 40px;
+
+    overflow-y: auto;
   }
 }
